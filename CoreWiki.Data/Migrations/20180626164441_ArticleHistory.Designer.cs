@@ -5,7 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
+<<<<<<< HEAD
 namespace CoreWiki.Data.EntityFramework.Migrations
+=======
+namespace CoreWiki.Migrations
+>>>>>>> upstream/master
 {
 	[DbContext(typeof(ApplicationDbContext))]
 	[Migration("20180626164441_ArticleHistory")]

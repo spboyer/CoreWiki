@@ -1,10 +1,19 @@
+<<<<<<< HEAD
 ﻿@model ViewModels.Comment
+=======
+﻿@using Data.Models
+@model Data.Models.Comment
+>>>>>>> upstream/master
 <br />
 <br />
 <div class="card card-header">
 	<h5>@Localizer["NewComment"]</h5>
 	<form method="post" autocomplete="off">
+<<<<<<< HEAD
 		<input type="hidden" asp-for="@Model.ArticleId" />
+=======
+		<input type="hidden" asp-for="@Model.IdArticle" />
+>>>>>>> upstream/master
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm">

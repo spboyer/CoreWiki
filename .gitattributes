@@ -1,2 +1,5 @@
 * text=auto eol=crlf
+<<<<<<< HEAD
 *.sh        text eol=lf
+=======
+>>>>>>> upstream/master

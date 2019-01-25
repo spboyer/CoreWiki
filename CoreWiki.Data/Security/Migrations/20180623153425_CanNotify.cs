@@ -1,6 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
+<<<<<<< HEAD
 namespace CoreWiki.Data.EntityFramework.Security.Migrations
+=======
+namespace CoreWiki.Data.Security.Migrations
+>>>>>>> upstream/master
 {
     public partial class CanNotify : Migration
     {

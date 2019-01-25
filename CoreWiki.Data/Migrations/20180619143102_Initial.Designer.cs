@@ -5,7 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
+<<<<<<< HEAD
 namespace CoreWiki.Data.EntityFramework.Migrations
+=======
+namespace CoreWiki.Migrations
+>>>>>>> upstream/master
 {
 	[DbContext(typeof(ApplicationDbContext))]
 	[Migration("20180619143102_Initial")]
@@ -45,7 +49,11 @@ namespace CoreWiki.Data.EntityFramework.Migrations
 						b.ToTable("Articles");
 
 						b.HasData(
+<<<<<<< HEAD
 											new { Id = 1, AuthorId = new Guid("00000000-0000-0000-0000-000000000000"), Content = "This is the default home page.  Please change me!", PublishedDateTime = new DateTime(2018, 6, 19, 14, 31, 2, 265, DateTimeKind.Utc), Slug = "home-page", Topic = "Home Page", ViewCount = 0 }
+=======
+											new { Id = 1, AuthorId = new Guid("00000000-0000-0000-0000-000000000000"), Content = "This is the default home page.  Please change me!", PublishedDateTime = new DateTime(2018, 6, 19, 14, 31, 2, 265, DateTimeKind.Utc), Slug = "home-page", Topic = "HomePage", ViewCount = 0 }
+>>>>>>> upstream/master
 									);
 					});
 

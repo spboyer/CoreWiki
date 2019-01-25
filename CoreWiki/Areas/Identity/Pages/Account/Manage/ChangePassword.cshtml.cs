@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+<<<<<<< HEAD
 using CoreWiki.Areas.Identity.Services;
 using CoreWiki.Data.EntityFramework.Security;
+=======
+using CoreWiki.Data.Security;
+>>>>>>> upstream/master
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -16,6 +20,7 @@ namespace CoreWiki.Areas.Identity.Pages.Account.Manage
         private readonly UserManager<CoreWikiUser> _userManager;
         private readonly SignInManager<CoreWikiUser> _signInManager;
         private readonly ILogger<ChangePasswordModel> _logger;
+<<<<<<< HEAD
 		private readonly HIBPClient _HIBPClient;
 
 		public ChangePasswordModel(
@@ -23,12 +28,23 @@ namespace CoreWiki.Areas.Identity.Pages.Account.Manage
             SignInManager<CoreWikiUser> signInManager,
             ILogger<ChangePasswordModel> logger,
 			HIBPClient HIBPClient)
+=======
+
+        public ChangePasswordModel(
+            UserManager<CoreWikiUser> userManager,
+            SignInManager<CoreWikiUser> signInManager,
+            ILogger<ChangePasswordModel> logger)
+>>>>>>> upstream/master
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
+<<<<<<< HEAD
 			_HIBPClient = HIBPClient;
 		}
+=======
+        }
+>>>>>>> upstream/master
 
         [BindProperty]
         public InputModel Input { get; set; }
@@ -85,6 +101,7 @@ namespace CoreWiki.Areas.Identity.Pages.Account.Manage
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
 
+<<<<<<< HEAD
 			var passwordCheck = await _HIBPClient.GetHitsPlainAsync(Input.NewPassword);
 			if (passwordCheck > 0)
 			{
@@ -93,6 +110,9 @@ namespace CoreWiki.Areas.Identity.Pages.Account.Manage
 			}
 
 			var changePasswordResult = await _userManager.ChangePasswordAsync(user, Input.OldPassword, Input.NewPassword);
+=======
+            var changePasswordResult = await _userManager.ChangePasswordAsync(user, Input.OldPassword, Input.NewPassword);
+>>>>>>> upstream/master
             if (!changePasswordResult.Succeeded)
             {
                 foreach (var error in changePasswordResult.Errors)

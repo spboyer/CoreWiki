@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
 using System;
 using CoreWiki.Notifications.Abstractions.Notifications;
+=======
+﻿using CoreWiki.Core.Notifications;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
+using System;
+>>>>>>> upstream/master
 
 namespace CoreWiki.Notifications
 {

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿// Changing the theme colors
 $white: #fff !default;
 $gray-100: #f8f9fa !default;
@@ -12,6 +13,9 @@ $gray-900: #212529 !default;
 $black: #000 !default;
 
 // Changing the body background and text
+=======
+﻿// Changing the body background and text
+>>>>>>> upstream/master
 $body-bg: #b6ff00;
 $body-color: #151417;
 
@@ -20,7 +24,10 @@ $primary: #2c0570;
 $dark: #ff6a00;
 $card-bg: #e8a6a6;
 $pagination-bg: rgba(251, 28, 230, 1.00);
+<<<<<<< HEAD
 $text-muted: $gray-700 !default;
+=======
+>>>>>>> upstream/master
 
 @import '../../node_modules/bootstrap/scss/bootstrap';
 @import 'custom-styles';
@@ -36,6 +43,7 @@ $text-muted: $gray-700 !default;
 		color: #02f722 !important;
 	}
 }
+<<<<<<< HEAD
 
 
 /// Diff colors
@@ -90,3 +98,5 @@ $text-muted: $gray-700 !default;
 .ImaginaryCharacter {
 }
 
+=======
+>>>>>>> upstream/master

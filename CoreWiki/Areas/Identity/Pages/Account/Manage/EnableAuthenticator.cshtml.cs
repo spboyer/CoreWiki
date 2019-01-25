@@ -6,11 +6,18 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Linq;
 using System.Threading.Tasks;
+<<<<<<< HEAD
+=======
+using CoreWiki.Data.Security;
+>>>>>>> upstream/master
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+<<<<<<< HEAD
 using CoreWiki.Data.EntityFramework.Security;
+=======
+>>>>>>> upstream/master
 
 namespace CoreWiki.Areas.Identity.Pages.Account.Manage
 {

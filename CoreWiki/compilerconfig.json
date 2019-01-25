@@ -18,6 +18,7 @@
   {
     "outputFile": "wwwroot/css/themeDark.css",
     "inputFile": "wwwroot/css/themeDark.scss"
+<<<<<<< HEAD
   },
   {
     "outputFile": "wwwroot/css/diff.css",
@@ -30,5 +31,7 @@
   {
     "outputFile": "wwwroot/css/themeGhost.css",
     "inputFile": "wwwroot/css/themeGhost.scss"
+=======
+>>>>>>> upstream/master
   }
 ]

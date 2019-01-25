@@ -4,7 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using System;
 
+<<<<<<< HEAD
 namespace CoreWiki.Data.EntityFramework.Migrations
+=======
+namespace CoreWiki.Migrations
+>>>>>>> upstream/master
 {
 	[DbContext(typeof(ApplicationDbContext))]
 	partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -48,7 +52,11 @@ namespace CoreWiki.Data.EntityFramework.Migrations
 						b.ToTable("Articles");
 
 						b.HasData(
+<<<<<<< HEAD
 											new { Id = 1, AuthorId = new Guid("00000000-0000-0000-0000-000000000000"), AuthorName = "Unknown", Content = "This is the default home page.  Please change me!", PublishedDateTime = new DateTime(2018, 6, 19, 14, 31, 2, 265, DateTimeKind.Utc), Slug = "home-page", Topic = "Home Page", Version = 1, ViewCount = 0 }
+=======
+											new { Id = 1, AuthorId = new Guid("00000000-0000-0000-0000-000000000000"), AuthorName = "Unknown", Content = "This is the default home page.  Please change me!", PublishedDateTime = new DateTime(2018, 6, 19, 14, 31, 2, 265, DateTimeKind.Utc), Slug = "home-page", Topic = "HomePage", Version = 1, ViewCount = 0 }
+>>>>>>> upstream/master
 									);
 					});
 
@@ -83,7 +91,11 @@ namespace CoreWiki.Data.EntityFramework.Migrations
 						b.ToTable("ArticleHistories");
 
 						b.HasData(
+<<<<<<< HEAD
 											new { Id = 1, ArticleId = 1, AuthorId = new Guid("00000000-0000-0000-0000-000000000000"), AuthorName = "Unknown", Content = "This is the default home page.  Please change me!", PublishedDateTime = new DateTime(2018, 6, 19, 14, 31, 2, 265, DateTimeKind.Utc), Slug = "home-page", Topic = "Home Page", Version = 1 }
+=======
+											new { Id = 1, ArticleId = 1, AuthorId = new Guid("00000000-0000-0000-0000-000000000000"), AuthorName = "Unknown", Content = "This is the default home page.  Please change me!", PublishedDateTime = new DateTime(2018, 6, 19, 14, 31, 2, 265, DateTimeKind.Utc), Slug = "home-page", Topic = "HomePage", Version = 1 }
+>>>>>>> upstream/master
 									);
 					});
 

@@ -123,9 +123,12 @@
   <data name="Default" xml:space="preserve">
     <value>Default</value>
   </data>
+<<<<<<< HEAD
   <data name="RainbowFritz" xml:space="preserve">
     <value>Rainbow</value>
   </data>
+=======
+>>>>>>> upstream/master
   <data name="Vivid" xml:space="preserve">
     <value>Ouch!</value>
   </data>

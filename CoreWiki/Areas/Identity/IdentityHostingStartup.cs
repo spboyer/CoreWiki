@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using CoreWiki.Data.EntityFramework.Security;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -5,6 +6,17 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+=======
+﻿using System;
+using CoreWiki.Data.Security;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+>>>>>>> upstream/master
 
 [assembly: HostingStartup(typeof(CoreWiki.Areas.Identity.IdentityHostingStartup))]
 namespace CoreWiki.Areas.Identity
@@ -18,6 +30,7 @@ namespace CoreWiki.Areas.Identity
 				bool.TryParse(context.Configuration["Authentication:RequireConfirmedEmail"],
 					out var requireConfirmedEmail);
 
+<<<<<<< HEAD
 				ConfigureDb(context, services);
 
 				services.AddIdentity<CoreWikiUser, IdentityRole>(options =>
@@ -32,24 +45,46 @@ namespace CoreWiki.Areas.Identity
 					.AddDefaultTokenProviders()
 					.AddEntityFrameworkStores<CoreWikiIdentityContext>();
 
+=======
+				services.AddDbContext<CoreWikiIdentityContext>(options =>
+																	options.UseSqlite(
+																					context.Configuration.GetConnectionString("CoreWikiIdentityContextConnection")));
+
+				services.AddDefaultIdentity<CoreWikiUser>(options =>
+						options.SignIn.RequireConfirmedEmail = requireConfirmedEmail)
+																	.AddEntityFrameworkStores<CoreWikiIdentityContext>();
+>>>>>>> upstream/master
 				var authBuilder = services.AddAuthentication();
 
 				if (!string.IsNullOrEmpty(context.Configuration["Authentication:Microsoft:ApplicationId"]))
 				{
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
 					authBuilder.AddMicrosoftAccount(microsoftOptions =>
 					{
 						microsoftOptions.ClientId = context.Configuration["Authentication:Microsoft:ApplicationId"];
 						microsoftOptions.ClientSecret = context.Configuration["Authentication:Microsoft:Password"];
 					});
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
 				}
 
 				if (!string.IsNullOrEmpty(context.Configuration["Authentication:Twitter:ConsumerKey"]))
 				{
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
 					authBuilder.AddTwitter(twitterOptions =>
 					{
 						twitterOptions.ConsumerKey = context.Configuration["Authentication:Twitter:ConsumerKey"];
 						twitterOptions.ConsumerSecret = context.Configuration["Authentication:Twitter:ConsumerSecret"];
 					});
+<<<<<<< HEAD
 				}
 
 				services.AddAuthorization(AuthPolicy.Execute);
@@ -78,6 +113,15 @@ namespace CoreWiki.Areas.Identity
 
 			services.AddDbContext<CoreWikiIdentityContext>(optionsBuilder);
 
+=======
+
+				}
+
+				services.AddAuthorization(AuthPolicy.Execute);
+
+
+			});
+>>>>>>> upstream/master
 		}
 	}
 }

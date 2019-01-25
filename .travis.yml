@@ -9,7 +9,11 @@ dist: trusty
 osx_image: xcode9.2
 
 mono: none
+<<<<<<< HEAD
 dotnet: 2.1.401
+=======
+dotnet: 2.1.301
+>>>>>>> upstream/master
 
 script:
   - ./build.sh --Target=Travis

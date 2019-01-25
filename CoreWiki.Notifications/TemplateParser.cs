@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Http;
+=======
+﻿using CoreWiki.Core.Notifications;
+using Microsoft.AspNetCore.Http;
+>>>>>>> upstream/master
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Abstractions;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -9,7 +14,10 @@ using Microsoft.AspNetCore.Routing;
 using System;
 using System.IO;
 using System.Threading.Tasks;
+<<<<<<< HEAD
 using CoreWiki.Notifications.Abstractions.Notifications;
+=======
+>>>>>>> upstream/master
 
 namespace CoreWiki.Notifications
 {

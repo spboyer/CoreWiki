@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿using CoreWiki.ViewModels;
+=======
+﻿using CoreWiki.Data.Models;
+>>>>>>> upstream/master
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 

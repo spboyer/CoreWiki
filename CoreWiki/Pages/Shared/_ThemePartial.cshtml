@@ -1,26 +1,43 @@
 ﻿<select id="selectTheme" class="form-control form-control-sm text-muted">
 	<option value="default">@Localizer["Default"]</option>
 	<option value="themeDark">@Localizer["Dark"]</option>
+<<<<<<< HEAD
 	<option value="themeGhost">@Localizer["Ghost"]</option>
 	<option value="themeOuch">@Localizer["Vivid"]</option>
 	<option value="themeRainbowFritz">@Localizer["RainbowFritz"]</option>
+=======
+	<option value="themeOuch">@Localizer["Vivid"]</option>
+>>>>>>> upstream/master
 </select>
 <script nws-csp-add-nonce="true">
 	(function () {
 		'use strict';
 
 		const themeCookieName = "CoreWiki.Theme";
+<<<<<<< HEAD
 		const DefaultTheme = "default";
+=======
+		const DefaultTheme = "light";
+>>>>>>> upstream/master
 
 		function getCookie(name) {
 			var value = "; " + document.cookie;
 			var parts = value.split("; " + name + "=");
+<<<<<<< HEAD
 			if (parts.length === 2) return parts.pop().split(";").shift();
 		}
 
 		var themeName = getCookie(themeCookieName);
 			if (themeName === undefined) {
 				themeName = DefaultTheme;
+=======
+			if (parts.length == 2) return parts.pop().split(";").shift();
+		}
+
+		var themeName = getCookie(themeCookieName);
+		if (themeName == undefined) {
+			themeName = DefaultTheme;
+>>>>>>> upstream/master
 		}
 
 		document.querySelector("#selectTheme").value = themeName;
@@ -31,7 +48,10 @@
 			document.cookie = encodeURIComponent(themeCookieName) + "=" + encodeURIComponent(ev.target.value) + ";Max-Age=" + (10 * 365 * 24 * 60 * 60) + " ;SameSite=Strict; Path=/";
 			location.reload();
 		});
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
 	})();
 </script>
 

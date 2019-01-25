@@ -18,8 +18,11 @@ namespace CoreWiki.Areas.Identity.Pages.Account.Manage
 
         public static string ExternalLogins => "ExternalLogins";
 
+<<<<<<< HEAD
 	    public static string MyRoles => "MyRoles";
 
+=======
+>>>>>>> upstream/master
         public static string PersonalData => "PersonalData";
 		public static string SetPassword => "SetPassword";
 
@@ -36,9 +39,12 @@ namespace CoreWiki.Areas.Identity.Pages.Account.Manage
         public static string ExternalLoginsNavClass(ViewContext viewContext) => PageNavClass(viewContext, ExternalLogins);
 
         public static string PersonalDataNavClass(ViewContext viewContext) => PageNavClass(viewContext, PersonalData);
+<<<<<<< HEAD
 
 	    public static string MyRolesNavClass(ViewContext viewContext) => PageNavClass(viewContext, MyRoles);
 
+=======
+>>>>>>> upstream/master
 		public static string SetPasswordNavClass(ViewContext viewContext) => PageNavClass(viewContext, SetPassword);
 
 		public static string TwoFactorAuthenticationNavClass(ViewContext viewContext) => PageNavClass(viewContext, TwoFactorAuthentication);

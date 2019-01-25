@@ -4,6 +4,7 @@
 @using CoreWiki
 @using CoreWiki.Helpers
 @using Microsoft.Extensions.Options;
+<<<<<<< HEAD
 @using CoreWiki.Configuration.Settings;
 @using Microsoft.AspNetCore.Mvc.Localization
 @using CoreWiki.ViewModels
@@ -17,4 +18,15 @@
 
 @addTagHelper *, NWebsec.AspNetCore.Mvc.TagHelpers
 
+=======
+@using CoreWiki.Core.Configuration;
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
+
+@namespace CoreWiki.Pages
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, NWebsec.AspNetCore.Mvc.TagHelpers
+>>>>>>> upstream/master
 @addTagHelper *, CoreWiki

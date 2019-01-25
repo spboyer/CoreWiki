@@ -4,10 +4,16 @@
 
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
+<<<<<<< HEAD
 var npmPath = (IsRunningOnWindows()
                 ? Context.Tools.Resolve("npm.cmd")
                 : Context.Tools.Resolve("npm"))
                 ?? throw new Exception("Failed to resolve npm, make sure Node is installed.");
+=======
+var npmPath = IsRunningOnWindows()
+                ? Context.Tools.Resolve("npm.cmd")
+                : Context.Tools.Resolve("npm");
+>>>>>>> upstream/master
 
 //////////////////////////////////////////////////////////////////////
 // PARAMETERS
@@ -86,9 +92,13 @@ Task("Test")
         new DotNetCoreTestSettings {
             NoBuild = true,
             NoRestore = true,
+<<<<<<< HEAD
             Configuration = configuration,
 						ResultsDirectory = "./testresults",
 						ArgumentCustomization = args => args.Append("--logger:xunit;LogFilePath=test_result.xml")
+=======
+            Configuration = configuration
+>>>>>>> upstream/master
         });
 });
 
@@ -114,4 +124,8 @@ Task("AppVeyor")
 Task("Travis")
     .IsDependentOn("Test");
 
+<<<<<<< HEAD
 RunTarget(target);
+=======
+RunTarget(target);
+>>>>>>> upstream/master

@@ -272,6 +272,7 @@ CoreWiki/wwwroot/lib/
 [Tt]ools/
 [Oo]utput/
 *.pubxml
+<<<<<<< HEAD
 .dotnet/
 
 # Minified and generated files
@@ -314,3 +315,8 @@ test_result.xml
 
 ## .nfs files are created when an open file is removed but is still being accessed
 .nfs*
+=======
+
+# Minified and generated files
+*.min.js
+>>>>>>> upstream/master

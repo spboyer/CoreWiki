@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 $CakeVersion = "0.30.0"
 $DotNetVersion = "2.1.403";
 $DotNetInstallerUri = "https://dot.net/v1/dotnet-install.ps1";
+=======
+$CakeVersion = "0.28.1"
+>>>>>>> upstream/master
 
 # Make sure tools folder exists
 $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Parent
@@ -10,6 +14,7 @@ if (!(Test-Path $ToolPath)) {
     New-Item -Path $ToolPath -Type directory | out-null
 }
 
+<<<<<<< HEAD
 # Attempt to set highest encryption available for SecurityProtocol.
 # PowerShell will not set this by default (until maybe .NET 4.6.x). This
 # will typically produce a message for PowerShell v2 (just an info
@@ -83,14 +88,47 @@ if ((!(Test-Path -Path $CakePath -PathType Container)) -or (!(Test-Path $CakeExe
         exit 1
     }
     $CakeExePath = (Get-ChildItem -Path $ToolPath -Filter "dotnet-cake*" -File| ForEach-Object FullName | Select-Object -First 1)
+=======
+###########################################################################
+# INSTALL CAKE
+###########################################################################
+
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+Function Unzip
+{
+    param([string]$zipfile, [string]$outpath)
+
+    [System.IO.Compression.ZipFile]::ExtractToDirectory($zipfile, $outpath)
+}
+
+
+# Make sure Cake has been installed.
+$CakePath = Join-Path $ToolPath "Cake.CoreCLR.$CakeVersion"
+$CakeDllPath = Join-Path $CakePath "Cake.dll"
+$CakeZipPath = Join-Path $ToolPath "Cake.zip"
+if (!(Test-Path $CakeDllPath)) {
+    Write-Host "Installing Cake $CakeVersion..."
+     (New-Object System.Net.WebClient).DownloadFile("https://www.nuget.org/api/v2/package/Cake.CoreCLR/$CakeVersion", $CakeZipPath)
+     Unzip $CakeZipPath $CakePath
+     Remove-Item $CakeZipPath
+>>>>>>> upstream/master
 }
 
 ###########################################################################
 # RUN BUILD SCRIPT
 ###########################################################################
+<<<<<<< HEAD
 & "$CakeExePath" ./build.cake --bootstrap
 if ($LASTEXITCODE -eq 0)
 {
     & "$CakeExePath" ./build.cake $args
 }
 exit $LASTEXITCODE
+=======
+& dotnet "$CakeDllPath" ./build.cake --bootstrap
+if ($LASTEXITCODE -eq 0)
+{
+    & dotnet "$CakeDllPath" ./build.cake $args
+}
+exit $LASTEXITCODE
+>>>>>>> upstream/master

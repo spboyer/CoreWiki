@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 ﻿using System.Threading.Tasks;
 using CoreWiki.Notifications.Abstractions.Notifications;
+=======
+﻿using CoreWiki.Core.Notifications;
+using System.Threading.Tasks;
+>>>>>>> upstream/master
 
 namespace CoreWiki.Notifications
 {

@@ -1,7 +1,11 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
+<<<<<<< HEAD
 using CoreWiki.Data.EntityFramework.Security;
+=======
+using CoreWiki.Data.Security;
+>>>>>>> upstream/master
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;

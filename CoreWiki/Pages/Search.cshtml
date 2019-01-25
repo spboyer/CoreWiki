@@ -1,14 +1,23 @@
+<<<<<<< HEAD
 @page "{handler?}"
+=======
+@page
+>>>>>>> upstream/master
 @using System.Collections.Generic
 @using Microsoft.AspNetCore.Mvc.Rendering
 @using Humanizer;
 @model SearchModel
 @{
+<<<<<<< HEAD
 	ViewData["Title"] = Model.RequestedPage == "search" ? Localizer["Search"] : Localizer["LatestChanges"];
+=======
+	ViewData["Title"] = Localizer["Search"];
+>>>>>>> upstream/master
 	var searchResult = Model.SearchResult;
 	var urlParams = new Dictionary<string, string>
 {
 {"Query", searchResult?.Query ?? ""}
+<<<<<<< HEAD
 
 };
 }
@@ -20,6 +29,12 @@
 
 @if (Model.RequestedPage == "search")
 {
+=======
+};
+}
+<h1 class="h1">@Localizer["SearchText"]</h1>
+
+>>>>>>> upstream/master
 <form action="/search" method="get" class="my-2">
 	<div class="form-group">
 		<div class="input-group">
@@ -30,7 +45,10 @@
 		</div>
 	</div>
 </form>
+<<<<<<< HEAD
 }
+=======
+>>>>>>> upstream/master
 
 @if (searchResult != null)
 {
@@ -39,6 +57,7 @@
 		found for <strong>@searchResult.Query</strong>
 	</div>
 
+<<<<<<< HEAD
 	if (searchResult.TotalPages > 1)
 	{
 	<pager asp-page="Search"
@@ -51,6 +70,14 @@
 	}
 
 	<div class="container-fluid row justify-content-around">
+=======
+	<pager asp-page="Search"
+				 url-params="urlParams"
+				 current-page="searchResult.CurrentPage"
+				 total-pages="searchResult.TotalPages">
+	</pager>
+	<div class="cwiki-flex-container">
+>>>>>>> upstream/master
 		@foreach (var article in searchResult.Results)
 		{
 			@await Html.PartialAsync("_ArticleRow", article)
@@ -58,3 +85,27 @@
 	</div>
 
 }
+<<<<<<< HEAD
+=======
+@section Styles {
+	<style>
+		.cwiki-flex-container {
+			padding: 0;
+			margin: 0;
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-flex-flow: row wrap;
+			justify-content: space-around;
+		}
+
+		.cwiki-flex-item {
+			width: 360px;
+			color: white;
+			border-radius: 20px;
+		}
+	</style>
+}
+>>>>>>> upstream/master

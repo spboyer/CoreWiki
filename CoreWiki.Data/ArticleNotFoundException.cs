@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
+<<<<<<< HEAD
 namespace CoreWiki.Data.EntityFramework
+=======
+namespace CoreWiki.Data
+>>>>>>> upstream/master
 {
 	[Serializable]
 	public class ArticleNotFoundException : Exception
@@ -22,4 +26,8 @@ namespace CoreWiki.Data.EntityFramework
 		{
 		}
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> upstream/master

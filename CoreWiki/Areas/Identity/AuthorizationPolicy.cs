@@ -6,6 +6,7 @@ namespace CoreWiki.Areas.Identity
 {
 	public class AuthPolicy
 	{
+<<<<<<< HEAD
 		/// <summary>
 		/// Requires the user to be logged in and have the Administrator role
 		/// </summary>
@@ -40,9 +41,37 @@ namespace CoreWiki.Areas.Identity
 			options.AddPolicy(PolicyConstants.CanWriteArticles, RequireUserWithEitherRole(new[] { "Authors", "Administrators" }));
 			options.AddPolicy(PolicyConstants.CanEditArticles, RequireUserWithEitherRole(new[] {"Authors", "Administrators"}));
 
+=======
+
+		internal static void Execute(AuthorizationOptions options)
+		{
+
+			options.AddPolicy(PolicyConstants.CanDeleteArticles, policy =>
+			{
+				policy.RequireAuthenticatedUser();
+				policy.RequireRole("Administrators");
+			});
+
+			options.AddPolicy(PolicyConstants.CanCreateComments, policy =>
+			{
+				policy.RequireAuthenticatedUser();
+			});
+
+			options.AddPolicy(PolicyConstants.CanWriteArticles, policy =>
+			{
+				policy.RequireAuthenticatedUser();
+				policy.RequireAnyRole("Authors", "Administrators");
+			});
+			
+>>>>>>> upstream/master
 			// Authors can edit their own articles
 			// Editors can edit anyones articles
 
 		}
 	}
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> upstream/master
 }

@@ -1,7 +1,11 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
+<<<<<<< HEAD
 namespace CoreWiki.Data.EntityFramework.Migrations
+=======
+namespace CoreWiki.Migrations
+>>>>>>> upstream/master
 {
     public partial class ArticleHistory : Migration
     {

@@ -20,11 +20,14 @@ $body-bg: $dark !default;
 $body-color: $light !default;
 $card-bg: $body-bg !default;
 $table-head-bg: $body-bg !default;
+<<<<<<< HEAD
 $text-muted: $gray-500 !default;
 $card-border-color: $light !default;
 $list-group-bg: $black !default;
 $hr-border-color: $white !default;
 
+=======
+>>>>>>> upstream/master
 
 @import 'custom-variables';
 
@@ -40,6 +43,7 @@ $hr-border-color: $white !default;
 	background-color: $gray-400;
 	color: $dark;
 }
+<<<<<<< HEAD
 
 /// Diff colors
 #diffBar {
@@ -92,3 +96,5 @@ $hr-border-color: $white !default;
 
 .ImaginaryCharacter {
 }
+=======
+>>>>>>> upstream/master

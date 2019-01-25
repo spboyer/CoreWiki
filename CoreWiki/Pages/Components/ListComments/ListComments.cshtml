@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 ﻿@model ICollection<CoreWiki.ViewModels.Comment>
+=======
+﻿@using Data.Models
+@model ICollection<Data.Models.Comment>
+>>>>>>> upstream/master
 <br />
 <h4>@Localizer["CommentsList"]</h4>
 
@@ -14,7 +19,11 @@
 }
 else
 {
+<<<<<<< HEAD
 	foreach (var item in Model.OrderByDescending(x => x.Submitted))
+=======
+	@foreach (var item in Model.OrderByDescending(x => x.Submitted))
+>>>>>>> upstream/master
 	{
 		<div class="card border-primary mb-3">
 			<div class="card-header">
@@ -30,7 +39,11 @@ else
 										@item.DisplayName
 									</span>
 									<br />
+<<<<<<< HEAD
 									<span class="small text-muted">Commented on <span data-value="@item.Submitted" class="timeStampValue">@item.Submitted</span></span>
+=======
+									<span class="labelCommentedOn">Commented on <span data-value="@item.Submitted" class="timeStampValue">@item.Submitted</span></span>
+>>>>>>> upstream/master
 								</div>
 							</div>
 						</div>

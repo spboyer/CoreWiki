@@ -1,7 +1,11 @@
 ﻿@page
 @model CoreWiki.Pages.HistoryModel
 @{
+<<<<<<< HEAD
 	ViewData["Title"] = $"History of {Model.Article.Topic}";
+=======
+    ViewData["Title"] = $"History of {Model.Article.Topic}";
+>>>>>>> upstream/master
 }
 
 <h2>History of @Model.Article.Topic</h2>
@@ -23,6 +27,7 @@
 
 @if (Model.DiffModel == null)
 {
+<<<<<<< HEAD
 	<h3>Version History</h3>
 
 	<form method="post" id="compareForm">
@@ -99,5 +104,84 @@ else
 		<div class="clear">
 		</div>
 	</div>
+=======
+<h3>Version History</h3>
+
+<form method="post" id="compareForm">
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Author</th>
+				<th>Version</th>
+				<th>Change Date</th>
+				<th>Compare</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var history in Model.Article.History.OrderByDescending(a => a.Version))
+			{
+				<tr>
+					<td>@history.AuthorName</td>		<!-- NEED Author -->
+					<td>@history.Version</td>
+					<td><span data-value="@history.Published" class="timeStampValue"> @history.Published</span></td>
+					<td><input type="checkbox" name="compare" value="@history.Version" class="form-check-input" /></td>
+				</tr>
+			}
+		</tbody>
+	</table>
+
+	<input type="submit" value="Compare Versions" />
+
+</form>
+
+@section scripts {
+
+<script type="text/javascript">
+
+	(function() {
+
+		OnLoad();
+
+		function OnLoad() {
+
+			document.getElementById("compareForm").addEventListener("submit", OnSubmit);
+
+		}
+
+		function OnSubmit(e) {
+
+			var checkedBoxes = document.querySelectorAll("input.form-check-input:checked");
+
+			if (checkedBoxes.length !== 2) {
+				alert("You can compare only two versions of this article");
+				e.preventDefault();
+			}
+
+		}
+
+	})();
+
+</script>
+
+}
+} else {
+
+<link rel="stylesheet" href="~/css/diff.css" />
+
+<div id="diffBox">
+	<div id="leftPane">
+		<div class="diffHeader">Old Text</div>
+
+		@await Html.PartialAsync("_DiffPane", Model.DiffModel.OldText)
+	</div>
+	<div id="rightPane">
+		<div class="diffHeader">New Text</div>
+		@await Html.PartialAsync("_DiffPane", Model.DiffModel.NewText)
+	</div>
+	<div class="clear">
+	</div>
+</div>
+>>>>>>> upstream/master
 
 }

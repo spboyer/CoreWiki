@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 ﻿@using Microsoft.AspNetCore.Http
 @inject SignInManager<CoreWikiUser> SignInManager
 @inject UserManager<CoreWikiUser> UserManager
 @inject IHttpContextAccessor HttpContext
+=======
+﻿@inject SignInManager<CoreWikiUser> SignInManager
+>>>>>>> upstream/master
 @{
 	var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }
@@ -14,6 +18,7 @@
 	}
 	<li class="nav-item"><a class="nav-link @ManageNavPages.TwoFactorAuthenticationNavClass(ViewContext)" asp-page="./TwoFactorAuthentication">Two-factor authentication</a></li>
 	<li class="nav-item"><a class="nav-link @ManageNavPages.PersonalDataNavClass(ViewContext)" asp-page="./PersonalData">Personal data</a></li>
+<<<<<<< HEAD
 	<li class="nav-item">
 		<a class="nav-link @ManageNavPages.MyRolesNavClass(ViewContext)" asp-page="./MyRoles">
 			Roles & Permissions  <span class="badge badge-light">
@@ -24,4 +29,6 @@
 			</span>
 		</a>
 	</li>
+=======
+>>>>>>> upstream/master
 </ul>

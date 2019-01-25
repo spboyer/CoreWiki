@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 ﻿@using CoreWiki.Configuration.Settings
 @using Microsoft.AspNetCore.Authorization
+=======
+﻿@using Data.Models
+@using Microsoft.AspNetCore.Authorization
+@using CoreWiki.Areas.Identity
+>>>>>>> upstream/master
 @model DetailsModel
 @inject IOptionsSnapshot<AppSettings> settings
 @inject IAuthorizationService AuthorizationService
@@ -7,8 +13,13 @@
 @if (settings.Value.Comments.IsEngineLocal)
 {
 
+<<<<<<< HEAD
 	if ((await AuthorizationService.AuthorizeAsync(User, null, PolicyConstants.CanCreateComments)).Succeeded) {
 		@await Component.InvokeAsync("CreateComments", new Comment { ArticleId = Model.Article.Id })
+=======
+	@if ((await AuthorizationService.AuthorizeAsync(User, null, PolicyConstants.CanCreateComments)).Succeeded) {
+		@await Component.InvokeAsync("CreateComments", new Comment { IdArticle = Model.Article.Id })
+>>>>>>> upstream/master
 	}
 
 	@await Component.InvokeAsync("ListComments", @Model.Article.Comments)
@@ -18,3 +29,7 @@ else
 {
 	<partial name="_DisqusComments" model="settings.Value.Comments.Disqus.ShortName" />
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master

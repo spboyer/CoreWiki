@@ -1,4 +1,5 @@
 ﻿@using System.IO
+<<<<<<< HEAD
 @using System.Security.Claims
 @using CoreWiki.Areas.Identity
 @using CoreWiki.Configuration.Settings
@@ -7,6 +8,12 @@
 @inject Microsoft.AspNetCore.Hosting.IHostingEnvironment env
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor context
 @inject UserManager<CoreWikiUser> UserManager
+=======
+@using CoreWiki.Areas.Identity
+
+@inject Microsoft.AspNetCore.Hosting.IHostingEnvironment env
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor context
+>>>>>>> upstream/master
 @inject IOptionsSnapshot<AppSettings> settings
 
 <!DOCTYPE html>
@@ -62,6 +69,7 @@
 		</button>
 		<div class="navbar-collapse collapse justify-content-between" id="navbarToggler">
 			<ul class="navbar-nav">
+<<<<<<< HEAD
 				<li class="nav-item"><a class="nav-link" href="/Search/LatestChanges">@Localizer["menu_LatestChanges"]</a></li>
 				@if (User.Identity.IsAuthenticated)
 				{
@@ -72,6 +80,10 @@
 						</li>
 					}
 				}
+=======
+				<li class="nav-item"><a class="nav-link" asp-page="/LatestChanges">@Localizer["menu_LatestChanges"]</a></li>
+				<li class="nav-item"><a class="nav-link" asp-page="/All">@Localizer["menu_AllArticles"]</a></li>
+>>>>>>> upstream/master
 				<li>
 					<form class="form-inline mx-0 mx-lg-2 my-2 my-lg-0" action="/search" method="get">
 						<div class="input-group">
@@ -92,6 +104,7 @@
 
 	<partial name="_CookieConsentPartial" />
 
+<<<<<<< HEAD
 <div class="container body-content">
 	@if (await UserManager.FindByEmailAsync("admin@corewiki.com") != null)
 	{
@@ -115,11 +128,34 @@
 </div>
 
 	<script src="~/lib/moment/min/moment-with-locales.min.js"></script>
+=======
+	<div class="container body-content">
+		@RenderBody()
+		<hr />
+		<footer>
+			<div class="row justify-content-between">
+				<div class="col-sm-12 col-md-8">
+					&copy; @DateTime.UtcNow.Year - <a target="_blank" href="https://github.com/csharpfritz/CoreWiki">@Localizer["CopyrightLinkText"]</a>
+				</div>
+				<div class="col-sm-12 col-md-auto">
+					<partial name="_ThemePartial" />
+				</div>
+			</div>
+
+		</footer>
+	</div>
+
+	<script src="~/lib/moment/min/moment.min.js"></script>
+>>>>>>> upstream/master
 	<environment include="Development">
 		<script src="~/lib/jquery/dist/jquery.js"></script>
 		<script src="~/lib/popper.js/dist/umd/popper.js"></script>
 		<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<<<<<<< HEAD
 		<script defer src="~/lib/fontawesome/js/all.js"></script>
+=======
+		<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+>>>>>>> upstream/master
 		<script src="~/js/site.js" asp-append-version="true"></script>
 	</environment>
 	<environment exclude="Development">
@@ -132,6 +168,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
 				asp-fallback-src="~/lib/popper.js/dist/umd/popper.min.js"
 				asp-fallback-test="Popper"
+<<<<<<< HEAD
 				integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
                 		crossorigin="anonymous">
 		</script>
@@ -145,6 +182,16 @@
 				asp-fallback-src="~/lib/fontawesome/js/all.min.js"
 				integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
 				crossorigin="anonymous"></script>
+=======
+				crossorigin="anonymous">
+		</script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+				asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+				asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+				integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+				crossorigin="anonymous">
+		</script>
+>>>>>>> upstream/master
 		<script src="~/js/site.min.js" asp-append-version="true"></script>
 	</environment>
 

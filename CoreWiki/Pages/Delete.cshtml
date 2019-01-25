@@ -33,7 +33,13 @@
     </dl>
 
     <form method="post">
+<<<<<<< HEAD
         <button type="submit" class="btn btn-outline-primary" asp-policy="CanDeleteArticles" asp-policy-message="You do not have permission to delete this article.">@Localizer["Delete"]</button>
+=======
+        <input type="hidden" asp-for="Article.Id" />
+        <button type="submit" class="btn btn-outline-primary" asp-policy="CanDeleteArticles" asp-policy-message="You do not have permission to delete this article.">@Localizer["Delete"]</button>
+
+>>>>>>> upstream/master
     </form>
     <div>
         <a asp-page="./Details">@Localizer["GoHome"]</a>

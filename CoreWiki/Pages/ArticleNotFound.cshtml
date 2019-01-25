@@ -7,11 +7,21 @@
 	<li>@Localizer["ListItem1"]</li>
 	<li>@Localizer["ListItem2"]</li>
 
+<<<<<<< HEAD
 	<li asp-policy="@PolicyConstants.CanWriteArticles" asp-policy-hidden="true">@Localizer["ListItem3"]</li>
 </ul>
 
 <div>
 	<a class="btn btn-outline-info" asp-page="/Create" asp-policy="@PolicyConstants.CanWriteArticles" asp-policy-hidden="true">@Localizer["Create"]</a>
+=======
+	@* TODO: Only show ListItem3 if the user satisfies the policy to create articles *@
+	<li>@Localizer["ListItem3"]</li>
+</ul>
+
+@* TODO: Only show button if the user satisfies the policy to create articles *@
+<div>
+<a class="btn btn-outline-info" asp-page="/Create">@Localizer["Create"]</a>
+>>>>>>> upstream/master
 </div>
 <br />
 <a href="~/">@Localizer["GoHome"]</a>

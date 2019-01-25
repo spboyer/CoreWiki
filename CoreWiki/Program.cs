@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 
 namespace CoreWiki
 {
+<<<<<<< HEAD
 	public class Program
 	{
 
@@ -46,4 +47,23 @@ namespace CoreWiki
 						})
 						.Build();
 	}
+=======
+    public class Program 
+    {
+        public static void Main(string[] args)
+        { 
+            BuildWebHost(args).Run();
+        }
+
+        public static IWebHost BuildWebHost(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .UseApplicationInsights()
+                .UseStartup<Startup>()
+                .UseKestrel(options =>
+                {
+                    options.AddServerHeader = false;
+                })
+                .Build();
+    }
+>>>>>>> upstream/master
 }

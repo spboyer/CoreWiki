@@ -1,6 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+<<<<<<< HEAD
+=======
+using System;
+using System.Collections.Generic;
+using System.Linq;
+>>>>>>> upstream/master
 using System.Threading.Tasks;
 
 namespace CoreWiki.TagHelpers
@@ -8,7 +14,10 @@ namespace CoreWiki.TagHelpers
 	[HtmlTargetElement("a", Attributes = "asp-policy")]
 	[HtmlTargetElement("a", Attributes = "asp-policy, asp-policy-hidden")]
 	[HtmlTargetElement("a", Attributes = "asp-policy, asp-policy-message")]
+<<<<<<< HEAD
 	[HtmlTargetElement("li", Attributes = "asp-policy, asp-policy-hidden")]
+=======
+>>>>>>> upstream/master
 	[HtmlTargetElement("button", Attributes = "asp-policy")]
 	[HtmlTargetElement("button", Attributes = "asp-policy, asp-policy-hidden")]
 	[HtmlTargetElement("button", Attributes = "asp-policy, asp-policy-message")]
@@ -16,22 +25,36 @@ namespace CoreWiki.TagHelpers
 	[HtmlTargetElement("input", Attributes = "asp-policy, asp-policy-hidden")]
 	[HtmlTargetElement("input", Attributes = "asp-policy, asp-policy-message")]
 	public class AuthorizationTagHelper : TagHelper, IAuthorizeData
+<<<<<<< HEAD
 	{
+=======
+    {
+>>>>>>> upstream/master
 		private readonly HttpContext _httpContext;
 		private readonly IAuthorizationService _authorizationService;
 		private readonly IAuthorizationPolicyProvider _policyProvider;
 
 		public AuthorizationTagHelper(IHttpContextAccessor httpContextAccessor, IAuthorizationService authorizationService, IAuthorizationPolicyProvider policyProvider)
 		{
+<<<<<<< HEAD
 			_httpContext = httpContextAccessor.HttpContext;
 			_authorizationService = authorizationService;
 			_policyProvider = policyProvider;
+=======
+			this._httpContext = httpContextAccessor.HttpContext;
+			this._authorizationService = authorizationService;
+			this._policyProvider = policyProvider;
+>>>>>>> upstream/master
 		}
 
 		/// <summary>
 		/// Gets or sets the policies that determines access to the HTML element.
 		/// </summary>
+<<<<<<< HEAD
 		[HtmlAttributeName("asp-policy")]
+=======
+		[HtmlAttributeName("asp-policy")]		
+>>>>>>> upstream/master
 		public string Policy { get; set; }
 
 		/// <summary>

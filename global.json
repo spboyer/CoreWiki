@@ -1,5 +1,9 @@
 {
   "sdk": {
+<<<<<<< HEAD
     "version": "2.1.403"
+=======
+    "version": "2.1.301"
+>>>>>>> upstream/master
   }
 }
